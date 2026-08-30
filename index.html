@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaNest — Learn Java, DSA & Coding Practice</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="pages/frontend/style.css">
+
+  <meta name="description"
+    content="Complete Java learning platform with 15 chapters, 30+ DSA topics, 375+ practice programs, interview preparation, and online compiler.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="JavaNest — Learn Java, DSA & Coding Practice">
+  <meta property="og:description"
+    content="Complete Java learning platform with 15 chapters, 30+ DSA topics, 375+ practice programs, interview preparation, and online compiler.">
+  <meta property="og:type" content="website">
+  <!-- <link rel="canonical" href="https://javanest.vercel.app/"> -->
+  <link rel="canonical" href="https://javanest.antheoffice.in/">
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t !== 'dark' && t !== 'light') t = 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+
+<body>
+  <a href="#main-content" class="sr-only"
+    style="position:absolute;top:0;left:0;background:var(--primary);color:#fff;padding:8px 16px;z-index:99999"
+    onfocus="this.classList.remove('sr-only')" onblur="this.classList.add('sr-only')">Skip to content</a>
+  <nav class="navbar">
+    <div class="nav-brand"><i class="fa-brands fa-java"></i> JavaNest <span class="nav-version">Vr.6.5.8</span></div>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu();event.stopPropagation();"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#" onclick="showPage('home');return false;" class="active" data-page="home">Home</a>
+      <a href="#" onclick="showPage('learn');return false;" data-page="learn">Java</a>
+      <a href="#" onclick="showPage('dsa');return false;" data-page="dsa">DSA</a>
+      <a href="#" onclick="showPage('practice-code');return false;" data-page="practice-code">Practice</a>
+      <a href="#" onclick="showPage('projects');return false;" data-page="projects">Projects</a>
+      <a href="#" onclick="showPage('interview-questions');return false;" data-page="interview-questions">Interview</a>
+      <a href="#" onclick="showPage('roadmap');return false;" data-page="roadmap">Roadmap</a>
+      <a href="#" onclick="showPage('javapro');return false;" data-page="javapro">Book</a>
+        <div class="nav-dropdown">
+          <a href="#" data-page="frontend" onclick="toggleNavDropdown(event)">Frontend <i class="fas fa-chevron-down" style="font-size:.7rem"></i></a>
+          <div class="dropdown-menu">
+            <a href="#" onclick="showPage('frontend-html');showFrontendChapter('html',0);return false;">HTML</a>
+            <a href="#" onclick="showPage('frontend-css');showFrontendChapter('css',0);return false;">CSS</a>
+            <a href="#" onclick="showPage('frontend-javascript');showFrontendChapter('javascript',0);return false;">JavaScript</a>
+            <a href="#" onclick="showPage('frontend-react');showFrontendChapter('react',0);return false;">React</a>
+          </div>
+        </div>
+      <a href="#" onclick="showPage('tryit');return false;" data-page="tryit">Compiler</a>
+      <!-- <a href="#" class="nav-challenge"
+        onclick="showPage('home');document.getElementById('daily-challenge-section').scrollIntoView({behavior:'smooth'});return false;"><i
+          class="fas fa-fire"></i> Daily Challenge</a> -->
+    </div>
+    <div class="nav-right">
+      <div class="search-box">
+        <i class="fas fa-search"
+          style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:.85rem;pointer-events:none"></i>
+        <input type="text" id="searchInput" placeholder="Search... (Ctrl+K)" autocomplete="off">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+    </div>
+  </nav>
+  <div class="page active" id="page-home">
+    <section class="hero">
+      <div class="hero-content">
+
+
+        <h1>Learn Java, DSA & <span>Frontend</span></h1>
+        <p>A complete learning platform with structured lessons for Java, DSA, HTML, CSS, JavaScript, and React. Practical examples, coding practice, interview preparation, and online compilers.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" onclick="showPage('learn');showLesson(0)"><i class="fas fa-play"></i> Start Learning Java</button>
+          <button class="btn btn-secondary" onclick="showPage('dsa')"><i class="fas fa-project-diagram"></i> Start DSA</button>
+          <button class="btn btn-outline" onclick="showPage('frontend-html');showFrontendChapter('html',0)"><i class="fab fa-html5"></i> Learn Frontend</button>
+          <button class="btn btn-outline" onclick="showPage('tryit')"><i class="fas fa-laptop-code"></i> Start Coding</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="stat-num">15+</span><span class="stat-label">Java Chapters</span></div>
+          <div class="hero-stat"><span class="stat-num">30+</span><span class="stat-label">DSA Topics</span></div>
+          <div class="hero-stat"><span class="stat-num">375+</span><span class="stat-label">Java Programs</span></div>
+          <div class="hero-stat"><span class="stat-num">30+</span><span class="stat-label">Frontend Chapters</span></div>
+          <div class="hero-stat"><span class="stat-num">100+</span><span class="stat-label">Interview Q&A</span></div>
+        </div>
+        <div class="hero-link"><a href="#" onclick="showPage('roadmap');return false;">View Roadmap <i
+              class="fas fa-arrow-right"></i></a></div>
+        <div class="hero-code">
+          <div class="code-block">
+            <div class="code-header"><span>HelloWorld.java</span><span>Java</span></div>
+            <pre><code><span class="kw">public class</span> <span class="cls">HelloWorld</span> {
+    <span class="kw">public static void</span> <span class="mth">main</span>(String[] args) {
+        System.out.<span class="mth">println</span>(<span class="str">"Hello, World!"</span>);
+    }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="update-cycle">
+      <div class="update-cycle-inner">
+        <div class="cycle-badge"><i class="fas fa-sync-alt fa-spin"></i> 10-Day Update Cycle</div>
+        <h2 class="cycle-heading">Fresh Content Every <span class="cycle-highlight">10 Days</span></h2>
+        <p class="cycle-sub">We research, write, and publish new topics on a rolling schedule so you always have something new to learn.</p>
+        <div class="cycle-timeline">
+          <div class="cycle-day" style="--delay:0"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 1</span><span class="day-task">Research &amp; Outline</span></div></div>
+          <div class="cycle-day" style="--delay:1"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 2</span><span class="day-task">Write Concepts</span></div></div>
+          <div class="cycle-day" style="--delay:2"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 3</span><span class="day-task">Add Code Examples</span></div></div>
+          <div class="cycle-day" style="--delay:3"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 4</span><span class="day-task">Review &amp; Diagrams</span></div></div>
+          <div class="cycle-day" style="--delay:4"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 5</span><span class="day-task">Publish &amp; Notify</span></div></div>
+          <div class="cycle-day" style="--delay:5"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 6</span><span class="day-task">Gather Feedback</span></div></div>
+          <div class="cycle-day" style="--delay:6"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 7</span><span class="day-task">Update Practice</span></div></div>
+          <div class="cycle-day" style="--delay:7"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 8</span><span class="day-task">Fix Issues</span></div></div>
+          <div class="cycle-day" style="--delay:8"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 9</span><span class="day-task">Prepare Next</span></div></div>
+          <div class="cycle-day" style="--delay:9"><div class="day-dot"></div><div class="day-card"><span class="day-label">Day 10</span><span class="day-task">Launch Update</span></div></div>
+        </div>
+        <div class="cycle-cta">
+          <button class="btn btn-primary" onclick="showPage('learn');showLesson(0)"><i class="fas fa-bell"></i> Start Learning Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="progress-section">
+      <div class="section-title">
+        <h2><i class="fas fa-chart-line" style="color:var(--primary)"></i> Your Progress</h2>
+        <p>Track your learning journey</p>
+      </div>
+      <div class="progress-dashboard">
+        <div class="progress-card">
+          <div class="progress-card-header"><i class="fas fa-java" style="color:var(--primary)"></i>
+            <h3>Java Progress</h3><span class="progress-pct" id="java-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="java-bar" style="width:0%"></div>
+          </div>
+          <div class="progress-meta"><span id="java-completed">0</span> of 15 chapters completed</div>
+        </div>
+        <div class="progress-card">
+          <div class="progress-card-header"><i class="fas fa-project-diagram" style="color:#27ae60"></i>
+            <h3>DSA Progress</h3><span class="progress-pct" id="dsa-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill dsa" id="dsa-bar" style="width:0%"></div>
+          </div>
+          <div class="progress-meta"><span id="dsa-completed">0</span> of 30 topics completed</div>
+        </div>
+        <div class="progress-card">
+          <div class="progress-card-header"><i class="fa-brands fa-html5" style="color:#e34f26"></i>
+            <h3>HTML Progress</h3><span class="progress-pct" id="html-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill html" id="html-bar" style="width:0%"></div>
+          </div>
+          <div class="progress-meta"><span id="html-completed">0</span> of 6 chapters completed</div>
+        </div>
+        <div class="progress-card">
+          <div class="progress-card-header"><i class="fa-brands fa-css3-alt" style="color:#1572b6"></i>
+            <h3>CSS Progress</h3><span class="progress-pct" id="css-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill css" id="css-bar" style="width:0%"></div>
+          </div>
+          <div class="progress-meta"><span id="css-completed">0</span> of 8 chapters completed</div>
+        </div>
+        <div class="progress-card">
+          <div class="progress-card-header"><i class="fab fa-js" style="color:#f7df1e"></i>
+            <h3>JavaScript Progress</h3><span class="progress-pct" id="js-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill js" id="js-bar" style="width:0%"></div>
+          </div>
+          <div class="progress-meta"><span id="js-completed">0</span> of 10 chapters completed</div>
+        </div>
+        <div class="progress-card">
+          <div class="progress-card-header"><i class="fa-brands fa-react" style="color:#61dafb"></i>
+            <h3>React Progress</h3><span class="progress-pct" id="react-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill react" id="react-bar" style="width:0%"></div>
+          </div>
+          <div class="progress-meta"><span id="react-completed">0</span> of 8 chapters completed</div>
+        </div>
+        <div class="continue-card" id="continue-card" style="display:none">
+          <div class="continue-icon"><i class="fas fa-arrow-right"></i></div>
+          <div class="continue-info">
+            <h3>Continue Learning</h3>
+            <p id="continue-text">You were learning: Java Basics</p>
+          </div>
+          <button class="btn btn-primary" id="continue-btn" onclick="continueLearning()"><i class="fas fa-play"></i>
+            Resume</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="daily-challenge-section">
+      <div class="section-title">
+        <h2><i class="fas fa-fire-alt" style="color:#e74c3c"></i> Daily Java Challenge</h2>
+        <p>Solve today's coding problem and build your streak</p>
+      </div>
+      <div class="challenge-dashboard">
+        <div class="challenge-streak-bar">
+          <div class="streak-info"><i class="fas fa-fire"></i> <span id="challenge-streak">0</span> Day Streak</div>
+          <div class="streak-info"><i class="fas fa-check-double"></i> <span id="challenge-solved">0</span> Problems
+            Solved</div>
+        </div>
+        <div class="challenge-card" id="daily-challenge">
+          <div class="challenge-header">
+            <h3 id="challenge-title"></h3>
+            <span class="difficulty-badge easy" id="challenge-difficulty"></span>
+          </div>
+          <div class="challenge-body">
+            <p id="challenge-description"></p>
+            <div class="challenge-io">
+              <div><strong>Input:</strong>
+                <pre id="challenge-input"></pre>
+              </div>
+              <div><strong>Output:</strong>
+                <pre id="challenge-output"></pre>
+              </div>
+            </div>
+            <div class="challenge-hint" id="challenge-hint-box" style="display:none"><strong>Hint:</strong> <span
+                id="challenge-hint"></span></div>
+            <div class="challenge-solution" id="challenge-solution-box" style="display:none"><strong>Solution:</strong>
+              <div class="code-block">
+                <div class="code-header"><span>Solution.java</span></div>
+                <pre><code id="challenge-solution-code"></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="challenge-actions">
+            <button class="btn btn-outline" onclick="toggleChallengeHint()"><i class="fas fa-lightbulb"></i>
+              Hint</button>
+            <button class="btn btn-outline" onclick="toggleChallengeSolution()"><i class="fas fa-eye"></i>
+              Solution</button>
+            <button class="btn btn-primary" onclick="solveChallenge()"><i class="fas fa-check"></i> Mark Solved</button>
+          </div>
+        </div>
+        <div class="challenge-history" id="challenge-history"></div>
+      </div>
+    </section>
+
+    <section class="section" id="gamification-section">
+      <div class="section-title">
+        <h2><i class="fas fa-trophy" style="color:var(--primary)"></i> Your Achievements</h2>
+        <p>Earn XP, build streaks, unlock badges</p>
+      </div>
+      <div class="gamification-dashboard">
+        <div class="gam-card xp-card">
+          <div class="gam-icon"><i class="fas fa-star"></i></div>
+          <div class="gam-value" id="xp-value">0</div>
+          <div class="gam-label">Total XP</div>
+        </div>
+        <div class="gam-card streak-card">
+          <div class="gam-icon"><i class="fas fa-fire"></i></div>
+          <div class="gam-value" id="streak-value">0</div>
+          <div class="gam-label">Day Streak</div>
+        </div>
+        <div class="gam-card solved-card">
+          <div class="gam-icon"><i class="fas fa-check-circle"></i></div>
+          <div class="gam-value" id="solved-value">0</div>
+          <div class="gam-label">Problems Solved</div>
+        </div>
+        <div class="gam-card badge-card">
+          <div class="gam-icon"><i class="fas fa-medal"></i></div>
+          <div class="gam-value" id="badge-value">0</div>
+          <div class="gam-label">Badges Earned</div>
+        </div>
+      </div>
+      <div class="badges-grid" id="badges-grid">
+        <div class="badge-item locked" data-badge="java-beginner"><i class="fas fa-award"></i><span>Java
+            Beginner</span><small>Complete 1 chapter</small></div>
+        <div class="badge-item locked" data-badge="java-explorer"><i class="fas fa-compass"></i><span>Java
+            Explorer</span><small>Complete 5 chapters</small></div>
+        <div class="badge-item locked" data-badge="java-master"><i class="fas fa-crown"></i><span>Java
+            Master</span><small>Complete all chapters</small></div>
+        <div class="badge-item locked" data-badge="dsa-starter"><i class="fas fa-brain"></i><span>DSA
+            Starter</span><small>Complete 1 DSA topic</small></div>
+        <div class="badge-item locked" data-badge="dsa-warrior"><i class="fas fa-shield-alt"></i><span>DSA
+            Warrior</span><small>Complete 10 DSA topics</small></div>
+        <div class="badge-item locked" data-badge="interview-ready"><i class="fas fa-handshake"></i><span>Interview
+            Ready</span><small>Complete 20 interview Qs</small></div>
+        <div class="badge-item locked" data-badge="html-beginner"><i class="fas fa-award"></i><span>HTML
+            Beginner</span><small>Complete 1 HTML chapter</small></div>
+        <div class="badge-item locked" data-badge="html-master"><i class="fas fa-crown"></i><span>HTML
+            Master</span><small>Complete all HTML chapters</small></div>
+        <div class="badge-item locked" data-badge="css-beginner"><i class="fas fa-award"></i><span>CSS
+            Beginner</span><small>Complete 1 CSS chapter</small></div>
+        <div class="badge-item locked" data-badge="css-master"><i class="fas fa-crown"></i><span>CSS
+            Master</span><small>Complete all CSS chapters</small></div>
+        <div class="badge-item locked" data-badge="js-beginner"><i class="fas fa-award"></i><span>JavaScript
+            Beginner</span><small>Complete 1 JS chapter</small></div>
+        <div class="badge-item locked" data-badge="js-master"><i class="fas fa-crown"></i><span>JavaScript
+            Master</span><small>Complete all JS chapters</small></div>
+        <div class="badge-item locked" data-badge="react-beginner"><i class="fas fa-award"></i><span>React
+            Beginner</span><small>Complete 1 React chapter</small></div>
+        <div class="badge-item locked" data-badge="react-master"><i class="fas fa-crown"></i><span>React
+            Master</span><small>Complete all React chapters</small></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Why JavaNest?</h2>
+        <p>Everything you need to master Java programming in one place</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon orange"><i class="fas fa-seedling"></i></div>
+          <h3>Beginner Friendly</h3>
+          <p>Start from absolute basics. No prior programming experience required.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon blue"><i class="fas fa-book-open"></i></div>
+          <h3>15 Complete Chapters</h3>
+          <p>From introduction to Java Streams. Organized in a logical learning path.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon green"><i class="fas fa-code"></i></div>
+          <h3>Real Code Examples</h3>
+          <p>Every concept comes with practical, runnable code examples.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon red"><i class="fas fa-project-diagram"></i></div>
+          <h3>30+ DSA Topics</h3>
+          <p>Complete DSA course with Java implementations and practice problems.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon purple"><i class="fas fa-puzzle-piece"></i></div>
+          <h3>375+ Practice Programs</h3>
+          <p>Hands-on coding practice across all Java topics.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon teal"><i class="fas fa-gift"></i></div>
+          <h3>Free Forever</h3>
+          <p>All notes are completely free. Learn at your own pace.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="background:var(--card)">
+      <div class="section-title">
+        <h2><i class="fas fa-newspaper" style="color:var(--primary)"></i> What's New</h2>
+        <p>Latest updates and improvements</p>
+      </div>
+      <div class="whats-new-scroll">
+        <div class="whats-new-cards">
+          <div class="whats-new-card">
+            <div class="whats-new-card-date"><i class="fas fa-calendar"></i> August 29, 2026</div>
+            <div class="whats-new-card-content">
+              <h4>Frontend Developer Tracks Added!</h4>
+              <ul>
+                <li>New HTML track with 6 chapters (tags, forms, semantic HTML, accessibility)</li>
+                <li>New CSS track with 8 chapters (selectors, flexbox, grid, animations, responsive)</li>
+                <li>New JavaScript track with 10 chapters (DOM, events, async, ES6+, closures)</li>
+                <li>New React track with 8 chapters (components, hooks, routing, context API)</li>
+                <li>Progress tracking and badges extended to all 4 frontend tracks</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whats-new-card">
+            <div class="whats-new-card-date"><i class="fas fa-calendar"></i> August 29, 2026</div>
+            <div class="whats-new-card-content">
+              <h4>Video Lectures Added to All 15 Java Chapters</h4>
+              <ul>
+                <li>YouTube video links added to all Learn section chapters</li>
+                <li>Chapter 1: Introduction to Java (dedicated intro video)</li>
+                <li>Chapter 2: Variables & Data Types (Bro Code)</li>
+                <li>Chapter 3: Flow Control — if/else & logical operators (Bro Code)</li>
+                <li>Chapters 4-15: OOP, Arrays, Strings, Exceptions, Multithreading, File I/O (Bro Code & more)</li>
+                <li>All videos open in new tab — works on mobile & desktop</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whats-new-card">
+            <div class="whats-new-card-date"><i class="fas fa-calendar"></i> August 28, 2026</div>
+            <div class="whats-new-card-content">
+              <h4>Platform Upgrade</h4>
+              <ul>
+                <li>Redesigned homepage with modern layout</li>
+                <li>Added daily coding challenges</li>
+                <li>Progress tracking with localStorage</li>
+                <li>Gamification system with XP and badges</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whats-new-card">
+            <div class="whats-new-card-date"><i class="fas fa-calendar"></i> August 20, 2026</div>
+            <div class="whats-new-card-content">
+              <h4>Content Expansion</h4>
+              <ul>
+                <li>Added 15 complete Java chapters</li>
+                <li>30+ DSA topics with examples</li>
+                <li>375+ practice programs</li>
+                <li>100+ interview questions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="background:var(--card)">
+      <div class="section-title">
+        <h2><i class="fas fa-route" style="color:var(--primary)"></i> Java Developer Roadmap</h2>
+        <p>Your path from beginner to job-ready Java developer</p>
+      </div>
+      <div class="roadmap-visual">
+        <div class="roadmap-step-visual" onclick="showPage('learn');showLesson(0)">
+          <div class="step-num">1</div>
+          <div class="step-info">
+            <h4>Java Basics</h4>
+            <p>Variables, Data Types, Operators</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('learn');showLesson(2)">
+          <div class="step-num">2</div>
+          <div class="step-info">
+            <h4>Flow Control</h4>
+            <p>Conditions, Loops, Switch</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('learn');showLesson(3)">
+          <div class="step-num">3</div>
+          <div class="step-info">
+            <h4>OOP Concepts</h4>
+            <p>Classes, Inheritance, Polymorphism</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('learn');showLesson(9)">
+          <div class="step-num">4</div>
+          <div class="step-info">
+            <h4>Arrays & Strings</h4>
+            <p>Collections, String Handling</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('learn');showLesson(13)">
+          <div class="step-num">5</div>
+          <div class="step-info">
+            <h4>Advanced Java</h4>
+            <p>Exceptions, Multithreading, Streams</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('dsa')">
+          <div class="step-num">6</div>
+          <div class="step-info">
+            <h4>DSA</h4>
+            <p>Data Structures & Algorithms</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('practice-code')">
+          <div class="step-num">7</div>
+          <div class="step-info">
+            <h4>Practice</h4>
+            <p>375+ Coding Problems</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('projects')">
+          <div class="step-num">8</div>
+          <div class="step-info">
+            <h4>Projects</h4>
+            <p>Build Real Applications</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('interview-questions')">
+          <div class="step-num">9</div>
+          <div class="step-info">
+            <h4>Interview Prep</h4>
+            <p>100+ Questions & Answers</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual step-final">
+          <div class="step-num"><i class="fas fa-rocket"></i></div>
+          <div class="step-info">
+            <h4>Job Ready!</h4>
+            <p>Start your Java career</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="background:var(--card)">
+      <div class="section-title">
+        <h2><i class="fas fa-route" style="color:#61dafb"></i> Frontend Developer Roadmap</h2>
+        <p>Your path from beginner to job-ready frontend developer</p>
+      </div>
+      <div class="roadmap-visual">
+        <div class="roadmap-step-visual" onclick="showPage('frontend-html');showFrontendChapter('html',0)">
+          <div class="step-num">1</div>
+          <div class="step-info">
+            <h4>HTML Basics</h4>
+            <p>Tags, structure, forms, semantic HTML</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('frontend-css');showFrontendChapter('css',0)">
+          <div class="step-num">2</div>
+          <div class="step-info">
+            <h4>CSS Fundamentals</h4>
+            <p>Selectors, box model, colors, typography</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('frontend-css');showFrontendChapter('css',3)">
+          <div class="step-num">3</div>
+          <div class="step-info">
+            <h4>CSS Layout</h4>
+            <p>Flexbox, Grid, positioning, responsive design</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('frontend-javascript');showFrontendChapter('javascript',0)">
+          <div class="step-num">4</div>
+          <div class="step-info">
+            <h4>JavaScript Core</h4>
+            <p>Variables, functions, DOM, events, ES6+</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('frontend-javascript');showFrontendChapter('javascript',7)">
+          <div class="step-num">5</div>
+          <div class="step-info">
+            <h4>Advanced JavaScript</h4>
+            <p>Async, closures, prototypes, modules</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('frontend-react');showFrontendChapter('react',0)">
+          <div class="step-num">6</div>
+          <div class="step-info">
+            <h4>React Fundamentals</h4>
+            <p>Components, JSX, props, state</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('frontend-react');showFrontendChapter('react',3)">
+          <div class="step-num">7</div>
+          <div class="step-info">
+            <h4>React Advanced</h4>
+            <p>Hooks, routing, Context API, performance</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('projects')">
+          <div class="step-num">8</div>
+          <div class="step-info">
+            <h4>Projects</h4>
+            <p>Build real frontend applications</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual" onclick="showPage('interview-questions')">
+          <div class="step-num">9</div>
+          <div class="step-info">
+            <h4>Interview Prep</h4>
+            <p>Frontend interview questions & answers</p>
+          </div><i class="fas fa-check-circle step-check"></i>
+        </div>
+        <div class="roadmap-connector"></div>
+        <div class="roadmap-step-visual step-final">
+          <div class="step-num"><i class="fas fa-rocket"></i></div>
+          <div class="step-info">
+            <h4>Job Ready!</h4>
+            <p>Start your frontend career</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><i class="fa-brands fa-java"></i> JavaNest</h4>
+          <p>Learn Java, DSA & Frontend Development.</p>
+          <p style="color:var(--text-muted);font-size:.85rem;margin-top:8px">A complete learning platform for Java, DSA, HTML, CSS, JavaScript, and React.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Learn</h4>
+          <a href="#" onclick="showPage('learn');showLesson(0)">Java Chapters</a>
+          <a href="#" onclick="showPage('dsa')">DSA Topics</a>
+          <a href="#" onclick="showPage('frontend-html');showFrontendChapter('html',0)">HTML Track</a>
+          <a href="#" onclick="showPage('frontend-css');showFrontendChapter('css',0)">CSS Track</a>
+          <a href="#" onclick="showPage('roadmap')">Learning Roadmap</a>
+          <a href="#" onclick="showPage('practice-code')">Practice Code</a>
+        </div>
+        <div>
+          <h4>Prepare</h4>
+          <a href="#" onclick="showPage('interview-questions')">Interview Q&A</a>
+          <a href="#" onclick="showPage('practice-code')">Coding Practice</a>
+          <a href="#" onclick="showPage('projects')">Projects</a>
+          <a href="#" onclick="showPage('javapro')">Java Book</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="#" onclick="showPage('javapro')">JavaBook</a>
+          <a href="#" onclick="showPage('tryit')">Compiler</a>
+          <a href="#" onclick="toggleAgent()">JavaNest Assistant</a>
+          <a href="#" onclick="showPage('roadmap')">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 JavaNest. All rights reserved. Built for learning Java from scratch. with Abhinav Maurya</p>
+      </div>
+    </footer>
+  </div>
+  <div class="page" id="page-learn">
+    <div class="learn-layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search chapters..."
+            onkeyup="filterSidebarItems('sidebar',this.value)" id="learnSearchInput"></div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Fundamentals</div>
+          <div class="sidebar-item active" onclick="showLesson(0)"><i class="fas fa-book"></i> Ch1: Introduction to Java
+          </div>
+          <div class="sidebar-item" onclick="showLesson(1)"><i class="fas fa-book"></i> Ch2: Constants, Variables & Data
+            Types</div>
+          <div class="sidebar-item" onclick="showLesson(2)"><i class="fas fa-book"></i> Ch3: Flow Control</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">OOP Concepts</div>
+          <div class="sidebar-item" onclick="showLesson(3)"><i class="fas fa-book"></i> Ch4: Objects and Classes</div>
+          <div class="sidebar-item" onclick="showLesson(4)"><i class="fas fa-book"></i> Ch5: Constructors</div>
+          <div class="sidebar-item" onclick="showLesson(5)"><i class="fas fa-book"></i> Ch6: Inheritance</div>
+          <div class="sidebar-item" onclick="showLesson(6)"><i class="fas fa-book"></i> Ch7: Polymorphism</div>
+          <div class="sidebar-item" onclick="showLesson(7)"><i class="fas fa-book"></i> Ch8: Abstraction</div>
+          <div class="sidebar-item" onclick="showLesson(8)"><i class="fas fa-book"></i> Ch9: Encapsulation</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Advanced</div>
+          <div class="sidebar-item" onclick="showLesson(9)"><i class="fas fa-book"></i> Ch10: Java Arrays</div>
+          <div class="sidebar-item" onclick="showLesson(10)"><i class="fas fa-book"></i> Ch11: Object and Math Class
+          </div>
+          <div class="sidebar-item" onclick="showLesson(11)"><i class="fas fa-book"></i> Ch12: Recursion</div>
+          <div class="sidebar-item" onclick="showLesson(12)"><i class="fas fa-book"></i> Ch13: Java String</div>
+          <div class="sidebar-item" onclick="showLesson(13)"><i class="fas fa-book"></i> Ch14: Exception Handling &
+            Multithreading</div>
+          <div class="sidebar-item" onclick="showLesson(14)"><i class="fas fa-book"></i> Ch15: Stream and File</div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <button class="sidebar-toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Chapters</button>
+        <div class="lesson-container" id="lessonContainer"></div>
+      </main>
+    </div>
+  </div>
+  <div class="page" id="page-dsa">
+    <div class="learn-layout">
+      <aside class="sidebar" id="dsaSidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search DSA topics..."
+            onkeyup="filterSidebarItems('dsaSidebar',this.value)" id="dsaSearchInput"></div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">01. Java Basics for DSA</div>
+          <div class="sidebar-item active" onclick="showDSATopic(this,'java-basics')"><i class="fas fa-coffee"></i> Java
+            Basics</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">02. Complexity Analysis</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'complexity-analysis')"><i class="fas fa-clock"></i> Time
+            & Space Complexity</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">03. Arrays</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'arrays')"><i class="fas fa-layer-group"></i> Arrays
+          </div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'array-techniques')"><i class="fas fa-arrows-alt-h"></i>
+            Array Techniques</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">04. Strings</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'strings')"><i class="fas fa-font"></i> Strings</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'string-builder')"><i class="fas fa-pen"></i>
+            StringBuilder</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">05-06. Sorting & Searching</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'sorting')"><i class="fas fa-sort"></i> Sorting
+            Algorithms</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'searching')"><i class="fas fa-search"></i> Searching
+            Algorithms</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">07-08. Recursion & Backtracking</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'recursion')"><i class="fas fa-sync"></i> Recursion</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'backtracking')"><i class="fas fa-undo"></i> Backtracking
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">09-12. Linked Lists</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'linked-list')"><i class="fas fa-link"></i> Singly Linked
+            List</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'doubly-linked-list')"><i
+              class="fas fa-exchange-alt"></i> Doubly Linked List</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'circular-linked-list')"><i class="fas fa-redo"></i>
+            Circular Linked List</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">13-15. Stacks, Queues & Deque</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'stack')"><i class="fas fa-columns"></i> Stack</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'queue')"><i class="fas fa-arrow-right"></i> Queue</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'deque')"><i class="fas fa-arrows-alt-h"></i> Deque</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">16. Hashing</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'hashing')"><i class="fas fa-fingerprint"></i> Hashing
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">17-18. Trees & BST</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'trees')"><i class="fas fa-sitemap"></i> Binary Tree
+          </div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'bst')"><i class="fas fa-project-diagram"></i> Binary
+            Search Tree</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">19-20. Heaps & Trie</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'heap')"><i class="fas fa-fire"></i> Heap & Priority
+            Queue</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'trie')"><i class="fas fa-tree"></i> Trie</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">21-23. Graphs</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'graph-basics')"><i class="fas fa-circle-nodes"></i>
+            Graph Basics</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'graph-traversal')"><i class="fas fa-route"></i> Graph
+            Traversal</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'graph-algorithms')"><i
+              class="fas fa-project-diagram"></i> Graph Algorithms</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">24-25. Greedy & DP</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'greedy')"><i class="fas fa-hand-holding-usd"></i> Greedy
+            Algorithms</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'dp')"><i class="fas fa-brain"></i> Dynamic Programming
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">26-30. Advanced Topics</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'bit-manipulation')"><i class="fas fa-microchip"></i> Bit
+            Manipulation</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'math')"><i class="fas fa-square-root-alt"></i>
+            Mathematics</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'java-collections')"><i class="fas fa-database"></i> Java
+            Collections</div>
+          <div class="sidebar-item" onclick="showDSATopic(this,'dsa-patterns')"><i class="fas fa-puzzle-piece"></i> DSA
+            Patterns</div>
+        </div>
+      </aside>
+      <main class="main-content" id="dsaMainContent">
+        <button class="sidebar-toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Topics</button>
+        <div class="lesson-container" id="dsaContainer">
+          <div class="lesson-header">
+            <h1><i class="fas fa-project-diagram" style="color:var(--primary)"></i> Data Structures & Algorithms</h1>
+          </div>
+          <div class="concept-box">
+            <h3>Master DSA with Java</h3>
+            <p>Complete DSA course covering all essential topics for coding interviews and placements. Based on
+              structured handwritten notes and curated practice problems.</p>
+            <p style="margin-top:12px"><strong>Select a topic from the sidebar to begin learning.</strong></p>
+          </div>
+          <div class="cards-grid" style="margin-top:24px">
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'java-basics')">
+              <div class="card-icon orange"><i class="fas fa-coffee"></i></div>
+              <h3>Java Basics</h3>
+              <p>Variables, I/O, conditions, loops, methods</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'complexity-analysis')">
+              <div class="card-icon blue"><i class="fas fa-clock"></i></div>
+              <h3>Complexity Analysis</h3>
+              <p>Big-O, Big-Ω, Big-Θ, time & space</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'arrays')">
+              <div class="card-icon green"><i class="fas fa-layer-group"></i></div>
+              <h3>Arrays</h3>
+              <p>Traversal, searching, two pointer, Kadane's</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'strings')">
+              <div class="card-icon red"><i class="fas fa-font"></i></div>
+              <h3>Strings</h3>
+              <p>String methods, palindrome, anagram</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'sorting')">
+              <div class="card-icon purple"><i class="fas fa-sort"></i></div>
+              <h3>Sorting</h3>
+              <p>Bubble, Selection, Merge, Quick, Heap Sort</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'recursion')">
+              <div class="card-icon teal"><i class="fas fa-sync"></i></div>
+              <h3>Recursion</h3>
+              <p>Base case, recursive call, stack memory</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'linked-list')">
+              <div class="card-icon orange"><i class="fas fa-link"></i></div>
+              <h3>Linked Lists</h3>
+              <p>Singly, doubly, circular linked lists</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'stack')">
+              <div class="card-icon blue"><i class="fas fa-columns"></i></div>
+              <h3>Stack & Queue</h3>
+              <p>LIFO, FIFO, deque, applications</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'hashing')">
+              <div class="card-icon green"><i class="fas fa-fingerprint"></i></div>
+              <h3>Hashing</h3>
+              <p>HashMap, HashSet, frequency counting</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'trees')">
+              <div class="card-icon red"><i class="fas fa-sitemap"></i></div>
+              <h3>Trees & BST</h3>
+              <p>Traversals, BST operations, heaps</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'graph-basics')">
+              <div class="card-icon purple"><i class="fas fa-circle-nodes"></i></div>
+              <h3>Graphs</h3>
+              <p>BFS, DFS, Dijkstra, MST, topological sort</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'dp')">
+              <div class="card-icon teal"><i class="fas fa-brain"></i></div>
+              <h3>Dynamic Programming</h3>
+              <p>Memoization, tabulation, 1D/2D DP, knapsack</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'greedy')">
+              <div class="card-icon orange"><i class="fas fa-hand-holding-usd"></i></div>
+              <h3>Greedy</h3>
+              <p>Activity selection, knapsack, Huffman</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'bit-manipulation')">
+              <div class="card-icon blue"><i class="fas fa-microchip"></i></div>
+              <h3>Bit Manipulation</h3>
+              <p>AND, OR, XOR, shift operators</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'dsa-patterns')">
+              <div class="card-icon green"><i class="fas fa-puzzle-piece"></i></div>
+              <h3>DSA Patterns</h3>
+              <p>Two pointers, sliding window, monotonic stack</p>
+            </div>
+            <div class="card" style="cursor:pointer"
+              onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'java-collections')">
+              <div class="card-icon red"><i class="fas fa-database"></i></div>
+              <h3>Java Collections</h3>
+              <p>ArrayList, HashMap, TreeSet, PriorityQueue</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="page" id="page-roadmap">
+    <section class="section">
+      <div class="section-title">
+        <h2><i class="fas fa-map" style="color:var(--primary)"></i> Complete Java Learning Roadmap</h2>
+        <p>Follow this path from beginner to advanced Java developer</p>
+      </div>
+      <div class="roadmap">
+        <div class="roadmap-step">
+          <div class="roadmap-dot">1</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(0)">Introduction to Java</a></h3>
+            <p>What is Java, features, JVM/JRE/JDK, first program</p><span class="badge beginner">Beginner</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">2</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(1)">Constants, Variables & Data Types</a></h3>
+            <p>All data types, operators, type casting, keywords</p><span class="badge beginner">Beginner</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">3</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(2)">Flow Control</a></h3>
+            <p>if/else, switch, for/while loops, break/continue</p><span class="badge beginner">Beginner</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">4</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(3)">Objects and Classes</a></h3>
+            <p>OOP basics, class design, object creation</p><span class="badge beginner">Beginner</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">5</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(4)">Constructors</a></h3>
+            <p>Default, parameterized, copy constructors, static, this</p><span class="badge beginner">Beginner</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">6</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(5)">Inheritance</a></h3>
+            <p>Types of inheritance, super keyword, aggregation</p><span class="badge intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">7</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(6)">Polymorphism</a></h3>
+            <p>Compile-time & runtime polymorphism, upcasting</p><span class="badge intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">8</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(7)">Abstraction</a></h3>
+            <p>Abstract classes, interfaces, when to use which</p><span class="badge intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">9</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(8)">Encapsulation</a></h3>
+            <p>Access modifiers, data hiding, getters/setters</p><span class="badge intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">10</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(9)">Java Arrays</a></h3>
+            <p>Single & multidimensional arrays, cloning</p><span class="badge intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">11</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(10)">Object and Math Class</a></h3>
+            <p>Object methods, Math class, wrapper classes</p><span class="badge intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">12</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(11)">Recursion</a></h3>
+            <p>Recursive methods, factorial, Fibonacci</p><span class="badge intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">13</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(12)">Java String</a></h3>
+            <p>String immutability, StringBuffer, StringBuilder</p><span class="badge intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">14</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(13)">Exception Handling & Multithreading</a></h3>
+            <p>Try-catch, custom exceptions, Thread class, deadlock</p><span class="badge advanced">Advanced</span>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot">15</div>
+          <div class="roadmap-info">
+            <h3><a href="#" onclick="showPage('learn');showLesson(14)">Stream and File</a></h3>
+            <p>Byte/character streams, file I/O, File class</p><span class="badge advanced">Advanced</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="background:var(--card)">
+      <div class="section-title">
+        <h2><i class="fas fa-project-diagram" style="color:#27ae60"></i> DSA Learning Roadmap</h2>
+        <p>Master Data Structures & Algorithms step by step</p>
+      </div>
+      <div class="roadmap">
+        <div class="roadmap-step"><div class="roadmap-dot">1</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'java-basics')">Java Basics for DSA</a></h3><p>Variables, I/O, conditions, loops, methods</p><span class="badge beginner">Beginner</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">2</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'complexity-analysis')">Complexity Analysis</a></h3><p>Big-O, Big-Ω, Big-Θ, time & space</p><span class="badge beginner">Beginner</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">3</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'arrays')">Arrays</a></h3><p>Traversal, searching, two pointer, Kadane's</p><span class="badge beginner">Beginner</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">4</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'strings')">Strings</a></h3><p>String methods, palindrome, anagram</p><span class="badge beginner">Beginner</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">5</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'sorting')">Sorting</a></h3><p>Bubble, Selection, Merge, Quick, Heap</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">6</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'recursion')">Recursion & Backtracking</a></h3><p>Base case, recursive call, stack memory</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">7</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'linked-list')">Linked Lists</a></h3><p>Singly, doubly, circular linked lists</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">8</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'stack')">Stacks, Queues & Deque</a></h3><p>LIFO, FIFO, deque, applications</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">9</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'hashing')">Hashing</a></h3><p>HashMap, HashSet, frequency counting</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">10</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'trees')">Trees & BST</a></h3><p>Traversals, BST operations, heaps</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">11</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'trie')">Heaps, Trie & Graphs</a></h3><p>Heap, Trie, BFS, DFS, Dijkstra, MST</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">12</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'greedy')">Greedy & Dynamic Programming</a></h3><p>Memoization, tabulation, knapsack</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">13</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'bit-manipulation')">Bit Manipulation & Math</a></h3><p>AND, OR, XOR, shift operators</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">14</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('dsa');showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'dsa-patterns')">DSA Patterns</a></h3><p>Two pointers, sliding window, monotonic stack</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step" style="--final:true"><div class="roadmap-dot"><i class="fas fa-check-circle"></i></div><div class="roadmap-info"><h3>DSA Mastered!</h3><p>Now solve coding problems</p></div></div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--card)">
+      <div class="section-title">
+        <h2><i class="fas fa-route" style="color:#61dafb"></i> Frontend Developer Roadmap</h2>
+        <p>HTML → CSS → JavaScript → React → Projects → Job Ready</p>
+      </div>
+      <div class="roadmap">
+        <div class="roadmap-step"><div class="roadmap-dot">1</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('frontend-html');showFrontendChapter('html',0)">HTML Basics</a></h3><p>Tags, structure, forms, semantic HTML</p><span class="badge beginner">Beginner</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">2</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('frontend-css');showFrontendChapter('css',0)">CSS Fundamentals</a></h3><p>Selectors, box model, colors, typography</p><span class="badge beginner">Beginner</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">3</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('frontend-css');showFrontendChapter('css',3)">CSS Layout</a></h3><p>Flexbox, Grid, positioning, responsive</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">4</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('frontend-javascript');showFrontendChapter('javascript',0)">JavaScript Core</a></h3><p>Variables, functions, DOM, events, ES6+</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">5</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('frontend-javascript');showFrontendChapter('javascript',7)">Advanced JavaScript</a></h3><p>Async, closures, prototypes, modules</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">6</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('frontend-react');showFrontendChapter('react',0)">React Fundamentals</a></h3><p>Components, JSX, props, state</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">7</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('frontend-react');showFrontendChapter('react',3)">React Advanced</a></h3><p>Hooks, routing, Context API, performance</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">8</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('projects')">Projects</a></h3><p>Build real frontend applications</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">9</div><div class="roadmap-info"><h3><a href="#" onclick="showPage('interview-questions')">Interview Prep</a></h3><p>Frontend interview questions & answers</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step" style="--final:true"><div class="roadmap-dot"><i class="fas fa-rocket"></i></div><div class="roadmap-info"><h3>Job Ready!</h3><p>Start your frontend career</p></div></div>
+      </div>
+    </section>
+  </div>
+  <div class="page" id="page-practice">
+    <section class="section">
+      <div class="section-title">
+        <h2><i class="fas fa-laptop-code" style="color:var(--primary)"></i> Practice Java</h2>
+        <p>Sharpen your skills with hands-on exercises</p>
+      </div>
+      <div class="practice-grid">
+        <div class="practice-card" onclick="alert('Pattern Programs section coming soon!')"><i class="fas fa-th"></i>
+          <h3>Pattern Programs</h3>
+          <p>Star patterns, number patterns, Floyd's triangle, butterfly pattern, and more.</p>
+        </div>
+        <div class="practice-card" onclick="alert('Array Problems section coming soon!')"><i
+            class="fas fa-layer-group"></i>
+          <h3>Array Problems</h3>
+          <p>Find min/max, sort arrays, rotate array, merge arrays, find duplicates.</p>
+        </div>
+        <div class="practice-card" onclick="alert('String Problems section coming soon!')"><i class="fas fa-font"></i>
+          <h3>String Problems</h3>
+          <p>Reverse strings, palindrome check, anagram, substring search.</p>
+        </div>
+        <div class="practice-card" onclick="alert('Quiz section coming soon!')"><i class="fas fa-question-circle"></i>
+          <h3>Java Quiz</h3>
+          <p>Test your knowledge with multiple choice questions from all chapters.</p>
+        </div>
+        <div class="practice-card" onclick="alert('Code Editor coming soon!')"><i class="fas fa-terminal"></i>
+          <h3>Online Code Editor</h3>
+          <p>Write and run Java code directly in your browser.</p>
+        </div>
+        <div class="practice-card" onclick="alert('Debugging section coming soon!')"><i class="fas fa-bug"></i>
+          <h3>Debugging Exercises</h3>
+          <p>Find and fix bugs in pre-written Java code.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="page" id="page-projects">
+    <div class="section" style="padding-top:100px">
+      <div class="section-title">
+        <h2><i class="fas fa-project-diagram" style="color:var(--primary)"></i> Java Projects</h2>
+        <p>Build real-world applications with Java</p>
+      </div>
+      <div class="project-grid" style="max-width:1000px;margin:0 auto;padding:0 20px">
+        <div class="project-card">
+          <div class="project-card-top"><i class="fas fa-calculator"></i>
+            <h3>Calculator</h3>
+            <p>A simple calculator application with basic arithmetic operations</p>
+          </div>
+          <div style="padding:0 20px 20px"><span class="badge beginner">Beginner</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-top"><i class="fas fa-university"></i>
+            <h3>ATM System</h3>
+            <p>Simulate ATM operations like withdraw, deposit, and balance check</p>
+          </div>
+          <div style="padding:0 20px 20px"><span class="badge beginner">Beginner</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-top"><i class="fas fa-gamepad"></i>
+            <h3>Number Guessing Game</h3>
+            <p>Interactive game where users guess a random number</p>
+          </div>
+          <div style="padding:0 20px 20px"><span class="badge beginner">Beginner</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-top"><i class="fas fa-book"></i>
+            <h3>Library Management</h3>
+            <p>Manage books, members, and borrowing operations</p>
+          </div>
+          <div style="padding:0 20px 20px"><span class="badge intermediate">Intermediate</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-top"><i class="fas fa-piggy-bank"></i>
+            <h3>Bank Management</h3>
+            <p>Full banking system with accounts, transactions, and transfers</p>
+          </div>
+          <div style="padding:0 20px 20px"><span class="badge intermediate">Intermediate</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-top"><i class="fas fa-users"></i>
+            <h3>Employee Management</h3>
+            <p>Manage employee records with CRUD operations</p>
+          </div>
+          <div style="padding:0 20px 20px"><span class="badge intermediate">Intermediate</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page" id="page-interview">
+    <section class="section">
+      <div class="section-title">
+        <h2><i class="fas fa-comments" style="color:var(--primary)"></i> Java Interview Prep</h2>
+        <p>Common Java interview questions organized by topic</p>
+      </div>
+      <div class="interview-grid">
+        <div class="interview-card">
+          <h3><i class="fas fa-check-circle" style="color:var(--primary)"></i> Core Concepts</h3>
+          <ul>
+            <li>What is the difference between JDK, JRE, and JVM?</li>
+            <li>Why is Java platform independent?</li>
+            <li>What are the features of Java?</li>
+            <li>What is the difference between == and .equals()?</li>
+            <li>What is the default value of a String variable?</li>
+          </ul>
+        </div>
+        <div class="interview-card">
+          <h3><i class="fas fa-cube" style="color:var(--primary)"></i> OOP Concepts</h3>
+          <ul>
+            <li>What are the four pillars of OOP?</li>
+            <li>What is the difference between abstraction and encapsulation?</li>
+            <li>What is method overloading vs overriding?</li>
+            <li>Can we override a static method?</li>
+            <li>What is the diamond problem in Java?</li>
+          </ul>
+        </div>
+        <div class="interview-card">
+          <h3><i class="fas fa-code" style="color:var(--primary)"></i> Strings</h3>
+          <ul>
+            <li>Why is String immutable in Java?</li>
+            <li>What is the difference between String, StringBuffer, and StringBuilder?</li>
+            <li>What is string pooling?</li>
+            <li>How do you compare two strings?</li>
+            <li>What is StringTokenizer?</li>
+          </ul>
+        </div>
+        <div class="interview-card">
+          <h3><i class="fas fa-exclamation-triangle" style="color:var(--primary)"></i> Exception Handling</h3>
+          <ul>
+            <li>What is the difference between Error and Exception?</li>
+            <li>What is a checked vs unchecked exception?</li>
+            <li>Can we have multiple catch blocks?</li>
+            <li>What is the finally block?</li>
+            <li>What is try-with-resources?</li>
+          </ul>
+        </div>
+        <div class="interview-card">
+          <h3><i class="fas fa-sync-alt" style="color:var(--primary)"></i> Multithreading</h3>
+          <ul>
+            <li>What is the difference between Thread and Runnable?</li>
+            <li>What is synchronization?</li>
+            <li>What is a deadlock?</li>
+            <li>What are wait() and notify() methods?</li>
+            <li>What is the thread lifecycle?</li>
+          </ul>
+        </div>
+        <div class="interview-card">
+          <h3><i class="fas fa-list" style="color:var(--primary)"></i> Collections & Arrays</h3>
+          <ul>
+            <li>What is the difference between Array and ArrayList?</li>
+            <li>What are wrapper classes?</li>
+            <li>What is autoboxing and unboxing?</li>
+            <li>What is the difference between HashMap and Hashtable?</li>
+            <li>What is the Comparable interface?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="page" id="page-practice-code">
+    <div class="learn-layout">
+      <aside class="sidebar" id="practiceSidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text"
+            placeholder="Search practice topics..." onkeyup="filterSidebarItems('practiceSidebar',this.value)"
+            id="practiceSearchInput"></div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Practice Code</div>
+          <div class="sidebar-item active" onclick="showPracticeCategory(this,'basic')"><i class="fas fa-code"></i>
+            Basic Programs</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'patterns')"><i class="fas fa-th"></i> Pattern
+            Programs</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'pattern-assignment')"><i
+              class="fas fa-puzzle-piece"></i> Pattern Assignment</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'number-patterns')"><i
+              class="fas fa-hashtag"></i> Number Patterns</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'loops')"><i class="fas fa-redo"></i> Loop
+            Examples</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'arrays')"><i class="fas fa-layer-group"></i>
+            Array Programs</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'strings')"><i class="fas fa-font"></i> String
+            Handling</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'oop')"><i class="fas fa-cube"></i> OOP Concepts
+          </div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'exceptions')"><i
+              class="fas fa-exclamation-triangle"></i> Exception Handling</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'threading')"><i class="fas fa-sync-alt"></i>
+            Multithreading</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'switch-continue')"><i
+              class="fas fa-exchange-alt"></i> Switch &amp; Continue</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'this-super')"><i class="fas fa-link"></i> This
+            &amp; Super Keywords</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'gc')"><i class="fas fa-trash-alt"></i> Garbage
+            Collection</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'packages')"><i class="fas fa-box"></i> Package
+            &amp; Import</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'practice')"><i class="fas fa-puzzle-piece"></i>
+            Practice Assignments</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'awt-swing')"><i class="fas fa-desktop"></i>
+            AWT/Swing GUI</div>
+          <div class="sidebar-item" onclick="showPracticeCategory(this,'friday-fun')"><i class="fas fa-gamepad"></i>
+            Friday Fun</div>
+        </div>
+      </aside>
+      <main class="main-content" id="practiceMainContent">
+        <button class="sidebar-toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Categories</button>
+        <div class="lesson-container" id="practiceContainer"></div>
+      </main>
+    </div>
+  </div>
+  <div class="page" id="page-interview-questions">
+    <div class="learn-layout">
+      <aside class="sidebar" id="interviewSidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search questions..."
+            onkeyup="filterSidebarItems('interviewSidebar',this.value)" id="interviewSearchInput"></div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Phase 1 — Java Core (51 Q)</div>
+          <div id="interviewSidebarList"></div>
+        </div>
+      </aside>
+      <main class="main-content" id="interviewMainContent">
+        <button class="sidebar-toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Questions</button>
+        <div class="lesson-container" id="interviewContainer"></div>
+      </main>
+    </div>
+  </div>
+  <div class="page" id="page-javapro">
+    <div class="learn-layout">
+      <aside class="sidebar" id="javaproSidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text"
+            placeholder="Search book chapters..." onkeyup="filterSidebarItems('javaproSidebar',this.value)"
+            id="javaproSearchInput"></div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">JavaPro Book (180 Chapters)</div>
+          <div id="javaproChapterList"></div>
+        </div>
+      </aside>
+      <main class="main-content" id="javaproMainContent">
+        <button class="sidebar-toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Chapters</button>
+        <div class="lesson-container" id="javaproContainer">
+          <div class="lesson-header">
+            <h1><i class="fas fa-book"></i> Java Notes for Professionals</h1>
+          </div>
+          <div class="concept-box">
+            <p>Complete Java reference book with 180 chapters covering everything from basics to advanced topics.
+              Extracted from JavaNotesForProfessionals.pdf (976 pages).</p>
+            <p style="margin-top:8px"><strong>Select a chapter from the sidebar to begin reading.</strong></p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="page" id="page-tryit">
+    <div
+      style="position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;padding-top:64px;box-sizing:border-box">
+      <iframe id="tryItFrame" src="https://onecompiler.com/java"
+        style="width:100%;height:calc(100vh + 48px);border:none;margin-top:-48px" allow="clipboard-write"
+        loading="lazy"></iframe>
+      <div
+        style="position:fixed;bottom:0;left:0;width:100%;padding:4px 16px;font-size:.78rem;color:var(--text-muted);display:flex;align-items:center;gap:10px;background:var(--surface);border-top:1px solid var(--border);z-index:1001">
+        <i class="fas fa-keyboard" style="color:var(--primary)"></i> For run <button class="hint-btn"><span>Ctrl</span>+<span>Enter</span></button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="page" id="page-frontend-html">
+    <div class="frontend-layout">
+      <aside class="frontend-sidebar" id="htmlSidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search HTML chapters..." onkeyup="filterSidebarItems('htmlSidebar',this.value)" id="htmlSearchInput"></div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Beginner</div>
+          <div class="sidebar-item active" onclick="showFrontendChapter('html',0)"><i class="fas fa-book"></i> Ch1: Introduction to HTML</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('html',1)"><i class="fas fa-book"></i> Ch2: HTML Tags & Elements</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('html',2)"><i class="fas fa-book"></i> Ch3: HTML Forms & Input</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('html',3)"><i class="fas fa-book"></i> Ch4: Semantic HTML</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Intermediate</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('html',4)"><i class="fas fa-book"></i> Ch5: HTML Tables & Lists</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('html',5)"><i class="fas fa-book"></i> Ch6: Accessibility & SEO</div>
+        </div>
+      </aside>
+      <main class="frontend-main">
+        <button class="sidebar-toggle-btn" onclick="toggleFrontendSidebar()"><i class="fas fa-bars"></i> Chapters</button>
+        <div class="frontend-container" id="frontendContainer-html"></div>
+      </main>
+      <div class="frontend-sidebar-backdrop" onclick="toggleFrontendSidebar()"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-frontend-css">
+    <div class="frontend-layout">
+      <aside class="frontend-sidebar" id="cssSidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search CSS chapters..." onkeyup="filterSidebarItems('cssSidebar',this.value)" id="cssSearchInput"></div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Beginner</div>
+          <div class="sidebar-item active" onclick="showFrontendChapter('css',0)"><i class="fas fa-book"></i> Ch1: Introduction to CSS</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('css',1)"><i class="fas fa-book"></i> Ch2: CSS Selectors</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('css',2)"><i class="fas fa-book"></i> Ch3: Box Model & Positioning</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Intermediate</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('css',3)"><i class="fas fa-book"></i> Ch4: Flexbox</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('css',4)"><i class="fas fa-book"></i> Ch5: CSS Grid</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('css',5)"><i class="fas fa-book"></i> Ch6: Colors, Typography & Units</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('css',6)"><i class="fas fa-book"></i> Ch7: Transitions & Animations</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Advanced</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('css',7)"><i class="fas fa-book"></i> Ch8: Responsive Design</div>
+        </div>
+      </aside>
+      <main class="frontend-main">
+        <button class="sidebar-toggle-btn" onclick="toggleFrontendSidebar()"><i class="fas fa-bars"></i> Chapters</button>
+        <div class="frontend-container" id="frontendContainer-css"></div>
+      </main>
+      <div class="frontend-sidebar-backdrop" onclick="toggleFrontendSidebar()"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-frontend-javascript">
+    <div class="frontend-layout">
+      <aside class="frontend-sidebar" id="javascriptSidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search JavaScript chapters..." onkeyup="filterSidebarItems('javascriptSidebar',this.value)" id="javascriptSearchInput"></div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Beginner</div>
+          <div class="sidebar-item active" onclick="showFrontendChapter('javascript',0)"><i class="fas fa-book"></i> Ch1: Introduction to JavaScript</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('javascript',1)"><i class="fas fa-book"></i> Ch2: Variables, Data Types & Operators</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('javascript',2)"><i class="fas fa-book"></i> Ch3: Functions & Scope</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('javascript',3)"><i class="fas fa-book"></i> Ch4: DOM Manipulation</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('javascript',4)"><i class="fas fa-book"></i> Ch5: Events & Event Handling</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('javascript',5)"><i class="fas fa-book"></i> Ch6: Control Flow & Loops</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('javascript',6)"><i class="fas fa-book"></i> Ch7: Arrays & Objects</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Intermediate</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('javascript',7)"><i class="fas fa-book"></i> Ch8: Async JavaScript & Promises</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('javascript',8)"><i class="fas fa-book"></i> Ch9: ES6+ Features</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Advanced</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('javascript',9)"><i class="fas fa-book"></i> Ch10: Closures & Prototypes</div>
+        </div>
+      </aside>
+      <main class="frontend-main">
+        <button class="sidebar-toggle-btn" onclick="toggleFrontendSidebar()"><i class="fas fa-bars"></i> Chapters</button>
+        <div class="frontend-container" id="frontendContainer-javascript"></div>
+      </main>
+      <div class="frontend-sidebar-backdrop" onclick="toggleFrontendSidebar()"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-frontend-react">
+    <div class="frontend-layout">
+      <aside class="frontend-sidebar" id="reactSidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search React chapters..." onkeyup="filterSidebarItems('reactSidebar',this.value)" id="reactSearchInput"></div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Beginner</div>
+          <div class="sidebar-item active" onclick="showFrontendChapter('react',0)"><i class="fas fa-book"></i> Ch1: Introduction to React</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('react',1)"><i class="fas fa-book"></i> Ch2: JSX & Components</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('react',2)"><i class="fas fa-book"></i> Ch3: Props & State</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Intermediate</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('react',3)"><i class="fas fa-book"></i> Ch4: React Hooks</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('react',4)"><i class="fas fa-book"></i> Ch5: Event Handling & Forms</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('react',5)"><i class="fas fa-book"></i> Ch6: React Router</div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Advanced</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('react',6)"><i class="fas fa-book"></i> Ch7: Context API & State Management</div>
+          <div class="sidebar-item" onclick="showFrontendChapter('react',7)"><i class="fas fa-book"></i> Ch8: Performance & Best Practices</div>
+        </div>
+      </aside>
+      <main class="frontend-main">
+        <button class="sidebar-toggle-btn" onclick="toggleFrontendSidebar()"><i class="fas fa-bars"></i> Chapters</button>
+        <div class="frontend-container" id="frontendContainer-react"></div>
+      </main>
+      <div class="frontend-sidebar-backdrop" onclick="toggleFrontendSidebar()"></div>
+    </div>
+  </div>
+
+  <div id="agentWidget">
+    <div id="agentBubble" onclick="toggleAgent()">
+      <i class="fas fa-robot"></i>
+      <span class="agent-pulse"></span>
+    </div>
+    <div id="agentPanel">
+      <div id="agentHeader">
+        <div style="display:flex;align-items:center;gap:10px">
+          <i class="fas fa-robot" style="font-size:1.3rem;color:var(--primary)"></i>
+          <div>
+            <div style="font-weight:700;font-size:.95rem">JavaNest Assistant</div>
+            <div style="font-size:.75rem;color:#4caf50">Online — Ask me anything</div>
+          </div>
+        </div>
+        <button onclick="toggleAgent()"
+          style="background:none;border:none;color:var(--text);font-size:1.1rem;cursor:pointer;padding:4px"><i
+            class="fas fa-times"></i></button>
+      </div>
+      <div id="agentMessages">
+        <div class="agent-msg bot">
+          <div class="agent-avatar"><i class="fas fa-robot"></i></div>
+          <div class="agent-bubble">Hi! I'm your JavaNest assistant. I can help you with:<br><br>
+            <span class="agent-tag" onclick="agentAsk('What topics are covered?')">Topics</span>
+            <span class="agent-tag" onclick="agentAsk('Show me Java code examples')">Code Examples</span>
+            <span class="agent-tag" onclick="agentAsk('How to use this website?')">How to Use</span>
+            <span class="agent-tag" onclick="agentAsk('What are practice programs?')">Practice Programs</span>
+            <span class="agent-tag" onclick="agentAsk('Tell me about OOP')">OOP Concepts</span>
+            <span class="agent-tag" onclick="agentAsk('Explain multithreading')">Multithreading</span>
+            <span class="agent-tag" onclick="agentAsk('Show exception handling code')">Exceptions</span>
+            <span class="agent-tag" onclick="agentAsk('What interview questions are available?')">Interview Q&A</span>
+          </div>
+        </div>
+      </div>
+      <div id="agentInput">
+        <input type="text" id="agentText" placeholder="Ask about Java, DSA, HTML, CSS, JS, React..."
+          onkeydown="if(event.key==='Enter')sendAgentMsg()">
+        <button onclick="sendAgentMsg()"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #agentWidget {
+      display: flex;
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 10000
+    }
+
+    #agentBubble {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(248, 152, 32, .4);
+      transition: all .3s;
+      position: relative
+    }
+
+    #agentBubble:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(248, 152, 32, .6)
+    }
+
+    .agent-pulse {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      animation: agentPulse 2s infinite
+    }
+
+    @keyframes agentPulse {
+      0% {
+        transform: scale(1);
+        opacity: 1
+      }
+
+      100% {
+        transform: scale(1.6);
+        opacity: 0
+      }
+    }
+
+    #agentPanel {
+      position: absolute;
+      bottom: 72px;
+      right: 0;
+      width: 380px;
+      max-height: 520px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .3);
+      display: none;
+      flex-direction: column;
+      overflow: hidden
+    }
+
+    #agentPanel.open {
+      display: flex
+    }
+
+    #agentHeader {
+      padding: 14px 16px;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    #agentMessages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 360px;
+      background: var(--bg)
+    }
+
+    .agent-msg {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start
+    }
+
+    .agent-msg.user {
+      flex-direction: row-reverse
+    }
+
+    .agent-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      flex-shrink: 0;
+      color: var(--primary)
+    }
+
+    .agent-msg.user .agent-avatar {
+      background: var(--primary);
+      color: #fff
+    }
+
+    .agent-bubble {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: .85rem;
+      line-height: 1.5;
+      word-wrap: break-word
+    }
+
+    .agent-msg.bot .agent-bubble {
+      background: var(--surface);
+      color: var(--text);
+      border-bottom-left-radius: 4px
+    }
+
+    .agent-msg.user .agent-bubble {
+      background: var(--primary);
+      color: #fff;
+      border-bottom-right-radius: 4px
+    }
+
+    .agent-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      margin: 3px;
+      border-radius: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      font-size: .78rem;
+      cursor: pointer;
+      transition: all .2s
+    }
+
+    .agent-tag:hover {
+      background: var(--primary);
+      color: #fff
+    }
+
+    .agent-code {
+      background: var(--code-bg);
+      color: #e0e0e0;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: .8rem;
+      margin: 6px 0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      line-height: 1.4
+    }
+
+    .agent-typing {
+      display: flex;
+      gap: 4px;
+      padding: 10px 14px
+    }
+
+    .agent-typing span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      animation: typing 1.2s infinite
+    }
+
+    .agent-typing span:nth-child(2) {
+      animation-delay: .2s
+    }
+
+    .agent-typing span:nth-child(3) {
+      animation-delay: .4s
+    }
+
+    @keyframes typing {
+
+      0%,
+      60%,
+      100% {
+        opacity: .3;
+        transform: scale(.8)
+      }
+
+      30% {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    #agentInput {
+      padding: 12px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+      background: var(--card)
+    }
+
+    #agentInput input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: .85rem;
+      outline: none
+    }
+
+    #agentInput input:focus {
+      border-color: var(--primary)
+    }
+
+    #agentInput button {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      transition: all .2s
+    }
+
+    #agentInput button:hover {
+      background: var(--primary-dark)
+    }
+
+    @media(max-width:480px) {
+      #agentPanel {
+        width: calc(100vw - 32px);
+        right: -8px;
+        max-height: 70vh
+      }
+    }
+  </style>
+
+  <!-- External Data -->
+  <script src="javapro-data.js"></script>
+  <script src="practice-data.js"></script>
+
+  <!-- App Data -->
+  <script src="js/practice-code-data.js"></script>
+  <script src="js/chatbot-data.js"></script>
+  <script src="js/practice-data.js"></script>
+  <script src="js/dsa.js"></script>
+  <script src="js/interview.js"></script>
+
+  <!-- App Logic -->
+  <script src="js/code-utils.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/lesson.js"></script>
+  <script src="js/practice-app.js"></script>
+  <script src="js/javapro-app.js"></script>
+  <script src="js/dsa-functions.js"></script>
+  <script src="js/sidebar-search.js"></script>
+  <script src="js/interview-app.js"></script>
+  <script src="js/chatbot-agent.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/sidebar-bindings.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="pages/frontend/app.js"></script>
+  <script src="pages/frontend/html-data.js"></script>
+  <script src="pages/frontend/css-data.js"></script>
+  <script src="pages/frontend/javascript-data.js"></script>
+  <script src="pages/frontend/react-data.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<div class="learn-layout">
+    <aside class="sidebar" id="practiceSidebar">
+      <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search practice topics..." onkeyup="filterSidebarItems('practiceSidebar',this.value)" id="practiceSearchInput"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Practice Code</div>
+        <div class="sidebar-item active" onclick="showPracticeCategory(this,'basic')"><i class="fas fa-code"></i> Basic Programs</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'patterns')"><i class="fas fa-th"></i> Pattern Programs</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'pattern-assignment')"><i class="fas fa-puzzle-piece"></i> Pattern Assignment</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'number-patterns')"><i class="fas fa-hashtag"></i> Number Patterns</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'loops')"><i class="fas fa-redo"></i> Loop Examples</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'arrays')"><i class="fas fa-layer-group"></i> Array Programs</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'strings')"><i class="fas fa-font"></i> String Handling</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'oop')"><i class="fas fa-cube"></i> OOP Concepts</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'exceptions')"><i class="fas fa-exclamation-triangle"></i> Exception Handling</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'threading')"><i class="fas fa-sync-alt"></i> Multithreading</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'switch-continue')"><i class="fas fa-exchange-alt"></i> Switch &amp; Continue</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'this-super')"><i class="fas fa-link"></i> This &amp; Super Keywords</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'gc')"><i class="fas fa-trash-alt"></i> Garbage Collection</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'packages')"><i class="fas fa-box"></i> Package &amp; Import</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'practice')"><i class="fas fa-puzzle-piece"></i> Practice Assignments</div>
+        <div class="sidebar-item" onclick="showPracticeCategory(this,'awt-swing')"><i class="fas fa-desktop"></i> AWT/Swing GUI</div>
+      </div>
+    </aside>
+    <main class="main-content" id="practiceMainContent">
+      <button class="sidebar-toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Categories</button>
+      <div class="lesson-container" id="practiceContainer"></div>
+    </main>
+  </div>

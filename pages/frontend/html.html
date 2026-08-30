@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Track — JavaNest Frontend</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet"="../css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t !== 'dark' && t !== 'light') t = 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand"><i class="fa-brands fa-html5"></i> JavaNest</div>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#page-learn">Java</a>
+      <a href="../index.html#page-dsa">DSA</a>
+      <div class="nav-dropdown">
+        <a href="index.html" onclick="toggleNavDropdown(event)">Frontend <i class="fas fa-chevron-down" style="font-size:.7rem"></i></a>
+        <div class="dropdown-menu">
+          <a href="html.html">HTML</a>
+          <a href="css.html">CSS</a>
+          <a href="javascript.html">JavaScript</a>
+          <a href="react.html">React</a>
+        </div>
+      </div>
+      <a href="../index.html#page-practice-code">Practice</a>
+      <a href="../index.html#page-projects">Projects</a>
+      <a href="../index.html#page-interview-questions">Interview</a>
+      <a href="../index.html#page-roadmap">Roadmap</a>
+      <a href="../index.html#page-tryit">Compiler</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+    </div>
+  </nav>
+
+  <div class="frontend-layout">
+<aside class="frontend-sidebar" id="htmlSidebar">
+        <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search HTML chapters..." onkeyup="filterSidebarItems('htmlSidebar',this.value)" id="htmlSearchInput"></div>
+        <div class="sidebar-section">
+        <div class="sidebar-section-title">Beginner</div>
+        <div class="sidebar-item active" onclick="showFrontendChapter('html',0)"><i class="fas fa-book"></i> Ch1: Introduction to HTML</div>
+        <div class="sidebar-item" onclick="showFrontendChapter('html',1)"><i class="fas fa-book"></i> Ch2: HTML Tags & Elements</div>
+        <div class="sidebar-item" onclick="showFrontendChapter('html',2)"><i class="fas fa-book"></i> Ch3: HTML Forms & Input</div>
+        <div class="sidebar-item" onclick="showFrontendChapter('html',3)"><i class="fas fa-book"></i> Ch4: Semantic HTML</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Intermediate</div>
+        <div class="sidebar-item" onclick="showFrontendChapter('html',4)"><i class="fas fa-book"></i> Ch5: HTML Tables & Lists</div>
+        <div class="sidebar-item" onclick="showFrontendChapter('html',5)"><i class="fas fa-book"></i> Ch6: Accessibility & SEO</div>
+      </div>
+    </aside>
+<main class="frontend-main">
+      <button class="sidebar-toggle-btn" onclick="toggleFrontendSidebar()"><i class="fas fa-bars"></i> Chapters</button>
+      <div class="frontend-container" id="frontendContainer"></div>
+    </main>
+    <div class="frontend-sidebar-backdrop" onclick="toggleFrontendSidebar()"></div>
+  </div>
+
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/sidebar-search.js"></script>
+  <script src="app.js"></script>
+  <script src="html-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      showFrontendChapter('html', 0);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<div class="learn-layout">
+    <aside class="sidebar" id="dsaSidebar">
+      <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search DSA topics..." onkeyup="filterSidebarItems('dsaSidebar',this.value)" id="dsaSearchInput"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">01. Java Basics for DSA</div>
+        <div class="sidebar-item active" onclick="showDSATopic(this,'java-basics')"><i class="fas fa-coffee"></i> Java Basics</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">02. Complexity Analysis</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'complexity-analysis')"><i class="fas fa-clock"></i> Time & Space Complexity</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">03. Arrays</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'arrays')"><i class="fas fa-layer-group"></i> Arrays</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'array-techniques')"><i class="fas fa-arrows-alt-h"></i> Array Techniques</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">04. Strings</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'strings')"><i class="fas fa-font"></i> Strings</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'string-builder')"><i class="fas fa-pen"></i> StringBuilder</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">05-06. Sorting & Searching</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'sorting')"><i class="fas fa-sort"></i> Sorting Algorithms</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'searching')"><i class="fas fa-search"></i> Searching Algorithms</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">07-08. Recursion & Backtracking</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'recursion')"><i class="fas fa-sync"></i> Recursion</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'backtracking')"><i class="fas fa-undo"></i> Backtracking</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">09-12. Linked Lists</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'linked-list')"><i class="fas fa-link"></i> Singly Linked List</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'doubly-linked-list')"><i class="fas fa-exchange-alt"></i> Doubly Linked List</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'circular-linked-list')"><i class="fas fa-redo"></i> Circular Linked List</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">13-15. Stacks, Queues & Deque</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'stack')"><i class="fas fa-columns"></i> Stack</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'queue')"><i class="fas fa-arrow-right"></i> Queue</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'deque')"><i class="fas fa-arrows-alt-h"></i> Deque</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">16. Hashing</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'hashing')"><i class="fas fa-fingerprint"></i> Hashing</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">17-18. Trees & BST</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'trees')"><i class="fas fa-sitemap"></i> Binary Tree</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'bst')"><i class="fas fa-project-diagram"></i> Binary Search Tree</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">19-20. Heaps & Trie</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'heap')"><i class="fas fa-fire"></i> Heap & Priority Queue</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'trie')"><i class="fas fa-tree"></i> Trie</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">21-23. Graphs</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'graph-basics')"><i class="fas fa-circle-nodes"></i> Graph Basics</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'graph-traversal')"><i class="fas fa-route"></i> Graph Traversal</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'graph-algorithms')"><i class="fas fa-project-diagram"></i> Graph Algorithms</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">24-25. Greedy & DP</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'greedy')"><i class="fas fa-hand-holding-usd"></i> Greedy Algorithms</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'dp')"><i class="fas fa-brain"></i> Dynamic Programming</div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">26-30. Advanced Topics</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'bit-manipulation')"><i class="fas fa-microchip"></i> Bit Manipulation</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'math')"><i class="fas fa-square-root-alt"></i> Mathematics</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'java-collections')"><i class="fas fa-database"></i> Java Collections</div>
+        <div class="sidebar-item" onclick="showDSATopic(this,'dsa-patterns')"><i class="fas fa-puzzle-piece"></i> DSA Patterns</div>
+      </div>
+    </aside>
+    <main class="main-content" id="dsaMainContent">
+      <button class="sidebar-toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Topics</button>
+      <div class="lesson-container" id="dsaContainer">
+        <div class="lesson-header"><h1><i class="fas fa-project-diagram" style="color:var(--primary)"></i> Data Structures & Algorithms</h1></div>
+        <div class="concept-box">
+          <h3>Master DSA with Java</h3>
+          <p>Complete DSA course covering all essential topics for coding interviews and placements. Based on structured handwritten notes and curated practice problems.</p>
+          <p style="margin-top:12px"><strong>Select a topic from the sidebar to begin learning.</strong></p>
+        </div>
+        <div class="cards-grid" style="margin-top:24px">
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'java-basics')"><div class="card-icon"><i class="fas fa-coffee"></i></div><h3>Java Basics</h3><p>Variables, I/O, conditions, loops, methods</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'complexity-analysis')"><div class="card-icon"><i class="fas fa-clock"></i></div><h3>Complexity Analysis</h3><p>Big-O, Big-Ω, Big-Θ, time & space</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'arrays')"><div class="card-icon"><i class="fas fa-layer-group"></i></div><h3>Arrays</h3><p>Traversal, searching, two pointer, Kadane's</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'strings')"><div class="card-icon"><i class="fas fa-font"></i></div><h3>Strings</h3><p>String methods, palindrome, anagram</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'sorting')"><div class="card-icon"><i class="fas fa-sort"></i></div><h3>Sorting</h3><p>Bubble, Selection, Merge, Quick, Heap Sort</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'recursion')"><div class="card-icon"><i class="fas fa-sync"></i></div><h3>Recursion</h3><p>Base case, recursive call, stack memory</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'linked-list')"><div class="card-icon"><i class="fas fa-link"></i></div><h3>Linked Lists</h3><p>Singly, doubly, circular linked lists</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'stack')"><div class="card-icon"><i class="fas fa-columns"></i></div><h3>Stack & Queue</h3><p>LIFO, FIFO, deque, applications</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'hashing')"><div class="card-icon"><i class="fas fa-fingerprint"></i></div><h3>Hashing</h3><p>HashMap, HashSet, frequency counting</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'trees')"><div class="card-icon"><i class="fas fa-sitemap"></i></div><h3>Trees & BST</h3><p>Traversals, BST operations, heaps</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'graph-basics')"><div class="card-icon"><i class="fas fa-circle-nodes"></i></div><h3>Graphs</h3><p>BFS, DFS, Dijkstra, MST, topological sort</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'dp')"><div class="card-icon"><i class="fas fa-brain"></i></div><h3>Dynamic Programming</h3><p>Memoization, tabulation, 1D/2D DP, knapsack</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'greedy')"><div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div><h3>Greedy</h3><p>Activity selection, knapsack, Huffman</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'bit-manipulation')"><div class="card-icon"><i class="fas fa-microchip"></i></div><h3>Bit Manipulation</h3><p>AND, OR, XOR, shift operators</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'dsa-patterns')"><div class="card-icon"><i class="fas fa-puzzle-piece"></i></div><h3>DSA Patterns</h3><p>Two pointers, sliding window, monotonic stack</p></div>
+          <div class="card" style="cursor:pointer" onclick="showDSATopic(document.querySelector('#dsaSidebar .sidebar-item'),'java-collections')"><div class="card-icon"><i class="fas fa-database"></i></div><h3>Java Collections</h3><p>ArrayList, HashMap, TreeSet, PriorityQueue</p></div>
+        </div>
+      </div>
+    </main>
+  </div>

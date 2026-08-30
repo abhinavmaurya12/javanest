@@ -1,0 +1,19 @@
+<div class="learn-layout">
+    <aside class="sidebar" id="javaproSidebar">
+      <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search book chapters..." onkeyup="filterSidebarItems('javaproSidebar',this.value)" id="javaproSearchInput"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">JavaPro Book (180 Chapters)</div>
+        <div id="javaproChapterList"></div>
+      </div>
+    </aside>
+    <main class="main-content" id="javaproMainContent">
+      <button class="sidebar-toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Chapters</button>
+      <div class="lesson-container" id="javaproContainer">
+        <div class="lesson-header"><h1><i class="fas fa-book"></i> Java Notes for Professionals</h1></div>
+        <div class="concept-box">
+          <p>Complete Java reference book with 180 chapters covering everything from basics to advanced topics. Extracted from JavaNotesForProfessionals.pdf (976 pages).</p>
+          <p style="margin-top:8px"><strong>Select a chapter from the sidebar to begin reading.</strong></p>
+        </div>
+      </div>
+    </main>
+  </div>

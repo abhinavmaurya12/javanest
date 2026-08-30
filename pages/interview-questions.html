@@ -1,0 +1,13 @@
+<div class="learn-layout">
+    <aside class="sidebar" id="interviewSidebar">
+      <div class="search-sidebar"><i class="fas fa-search"></i><input type="text" placeholder="Search questions..." onkeyup="filterSidebarItems('interviewSidebar',this.value)" id="interviewSearchInput"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Phase 1 — Java Core (51 Q)</div>
+        <div id="interviewSidebarList"></div>
+      </div>
+    </aside>
+    <main class="main-content" id="interviewMainContent">
+      <button class="sidebar-toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Questions</button>
+      <div class="lesson-container" id="interviewContainer"></div>
+    </main>
+  </div>

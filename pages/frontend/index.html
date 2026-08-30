@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Developer Track — JavaNest</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t !== 'dark' && t !== 'light') t = 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand"><i class="fa-brands fa-html5"></i> Frontend Track</div>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#page-learn">Java</a>
+      <a href="../index.html#page-dsa">DSA</a>
+      <div class="nav-dropdown">
+        <a href="index.html" class="active">Frontend <i class="fas fa-chevron-down" style="font-size:.7rem"></i></a>
+        <div class="dropdown-menu">
+          <a href="html.html">HTML</a>
+          <a href="css.html">CSS</a>
+          <a href="javascript.html">JavaScript</a>
+          <a href="react.html">React</a>
+        </div>
+      </div>
+      <a href="../index.html#page-practice-code">Practice</a>
+      <a href="../index.html#page-projects">Projects</a>
+      <a href="../index.html#page-interview-questions">Interview</a>
+      <a href="../index.html#page-roadmap">Roadmap</a>
+      <a href="../index.html#page-tryit">Compiler</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+    </div>
+  </nav>
+
+  <div class="page active">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Frontend Developer <span>Track</span></h1>
+        <p>Master HTML, CSS, JavaScript, and React with structured lessons, hands-on examples, and a complete frontend roadmap.</p>
+        <div class="hero-btns">
+          <a href="html.html" class="btn btn-primary"><i class="fas fa-code"></i> Start Learning HTML</a>
+          <a href="css.html" class="btn btn-secondary"><i class="fas fa-palette"></i> Learn CSS</a>
+          <a href="javascript.html" class="btn btn-outline"><i class="fab fa-js"></i> Learn JavaScript</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="stat-num">4</span><span class="stat-label">Tracks</span></div>
+          <div class="hero-stat"><span class="stat-num">30+</span><span class="stat-label">Chapters</span></div>
+          <div class="hero-stat"><span class="stat-num">150+</span><span class="stat-label">Examples</span></div>
+          <div class="hero-stat"><span class="stat-num">100+</span><span class="stat-label">Practice Problems</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Choose Your Track</h2>
+        <p>Start with HTML, then CSS, JavaScript, and finally React</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card" style="cursor:pointer" onclick="window.location.href='html.html'">
+          <div class="card-icon orange"><i class="fa-brands fa-html5"></i></div>
+          <h3>HTML</h3>
+          <p>The foundation of every webpage. Learn tags, structure, forms, and semantic HTML.</p>
+          <span class="badge beginner">6 Chapters</span>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="window.location.href='css.html'">
+          <div class="card-icon blue"><i class="fa-brands fa-css3-alt"></i></div>
+          <h3>CSS</h3>
+          <p>Style your pages with selectors, flexbox, grid, animations, and responsive design.</p>
+          <span class="badge intermediate">8 Chapters</span>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="window.location.href='javascript.html'">
+          <div class="card-icon purple"><i class="fab fa-js"></i></div>
+          <h3>JavaScript</h3>
+          <p>Add interactivity with variables, functions, DOM, events, async programming, and ES6+.</p>
+          <span class="badge intermediate">10 Chapters</span>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="window.location.href='react.html'">
+          <div class="card-icon teal"><i class="fa-brands fa-react"></i></div>
+          <h3>React</h3>
+          <p>Build modern UIs with components, props, state, hooks, routing, and the Context API.</p>
+          <span class="badge advanced">8 Chapters</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--card)">
+      <div class="section-title">
+        <h2><i class="fas fa-route" style="color:var(--primary)"></i> Frontend Developer Roadmap</h2>
+        <p>Your path from beginner to job-ready frontend developer</p>
+      </div>
+      <div class="roadmap">
+        <div class="roadmap-step"><div class="roadmap-dot">1</div><div class="roadmap-info"><h3><a href="html.html">HTML Basics</a></h3><p>Tags, structure, forms, semantic HTML</p><span class="badge beginner">Beginner</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">2</div><div class="roadmap-info"><h3><a href="css.html">CSS Fundamentals</a></h3><p>Selectors, box model, colors, typography</p><span class="badge beginner">Beginner</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">3</div><div class="roadmap-info"><h3><a href="css.html">CSS Layout</a></h3><p>Flexbox, Grid, positioning, responsive design</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">4</div><div class="roadmap-info"><h3><a href="javascript.html">JavaScript Core</a></h3><p>Variables, functions, DOM, events, ES6+</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">5</div><div class="roadmap-info"><h3><a href="javascript.html">Advanced JavaScript</a></h3><p>Async, closures, prototypes, modules</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">6</div><div class="roadmap-info"><h3><a href="react.html">React Fundamentals</a></h3><p>Components, JSX, props, state</p><span class="badge intermediate">Intermediate</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">7</div><div class="roadmap-info"><h3><a href="react.html">React Advanced</a></h3><p>Hooks, routing, Context API, performance</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">8</div><div class="roadmap-info"><h3><a href="../index.html#page-projects">Projects</a></h3><p>Build real frontend applications</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step"><div class="roadmap-dot">9</div><div class="roadmap-info"><h3><a href="../index.html#page-interview-questions">Interview Prep</a></h3><p>Frontend interview questions & answers</p><span class="badge advanced">Advanced</span></div></div>
+        <div class="roadmap-step" style="--final:true"><div class="roadmap-dot"><i class="fas fa-rocket"></i></div><div class="roadmap-info"><h3>Job Ready!</h3><p>Start your frontend career</p></div></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div><h4><i class="fa-brands fa-html5"></i> Frontend Track</h4><p style="color:var(--text-muted);font-size:.88rem;margin-bottom:16px">Master HTML, CSS, JavaScript, and React. From beginner to job-ready frontend developer.</p></div>
+        <div><h4>Tracks</h4><a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a><a href="react.html">React</a></div>
+        <div><h4>Resources</h4><a href="../index.html#page-practice-code">Practice Code</a><a href="../index.html#page-projects">Projects</a><a href="../index.html#page-interview-questions">Interview Prep</a><a href="../index.html#page-roadmap">Roadmap</a></div>
+        <div><h4>Quick Links</h4><a href="../index.html">JavaNest Home</a><a href="../index.html#page-learn">Java Chapters</a><a href="../index.html#page-dsa">DSA Topics</a><a href="../index.html#page-tryit">Compiler</a></div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 JavaNest. Frontend Developer Track. Built for learning web development from scratch.</div>
+    </footer>
+  </div>
+
+  <script src="../js/navigation.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
