@@ -33,6 +33,36 @@ For a stronger **portfolio + GitHub presentation**, I’d use this more advanced
 
 ---
 
+# 🔗 JavaNest Ecosystem
+
+JavaNest is part of a broader learning ecosystem focused on Java and programming.
+
+### 🚀 JavaPath
+
+A dedicated Java learning platform covering:
+
+* Java
+* DSA
+* Interview Preparation
+* Coding Practice
+* Programming Resources
+
+🔗 [https://abhinavmaurya12.github.io/javapath-react/](https://abhinavmaurya12.github.io/javapath-react/)
+
+### 🎮 FunByte
+
+A collection of browser-based games and interactive mini-projects.
+
+🔗 [https://abhinavmaurya12.github.io/funbyte/](https://abhinavmaurya12.github.io/funbyte/)
+
+### ☕ JavaSquadz
+
+A Java programming practice repository containing programs and examples covering Core Java, OOP, Arrays, Collections, Exception Handling, File I/O, Multithreading, AWT/Swing and more.
+
+🔗 [https://github.com/abhinavmaurya12/JavaSquadz](https://github.com/abhinavmaurya12/JavaSquadz)
+
+---
+
 ## 🌟 What is JavaNest?
 
 **JavaNest** is a web-based learning platform created to provide a structured path for learning **Java programming, Data Structures & Algorithms, coding practice, and interview preparation**.
@@ -516,36 +546,6 @@ JavaNest is continuously evolving.
 * [ ] 🔖 Bookmark system
 * [ ] 📝 User notes
 * [ ] 📱 PWA support
-
----
-
-# 🔗 JavaNest Ecosystem
-
-JavaNest is part of a broader learning ecosystem focused on Java and programming.
-
-### 🚀 JavaPath
-
-A dedicated Java learning platform covering:
-
-* Java
-* DSA
-* Interview Preparation
-* Coding Practice
-* Programming Resources
-
-🔗 [https://abhinavmaurya12.github.io/javapath-react/](https://abhinavmaurya12.github.io/javapath-react/)
-
-### 🎮 FunByte
-
-A collection of browser-based games and interactive mini-projects.
-
-🔗 [https://abhinavmaurya12.github.io/funbyte/](https://abhinavmaurya12.github.io/funbyte/)
-
-### ☕ JavaSquadz
-
-A Java programming practice repository containing programs and examples covering Core Java, OOP, Arrays, Collections, Exception Handling, File I/O, Multithreading, AWT/Swing and more.
-
-🔗 [https://github.com/abhinavmaurya12/JavaSquadz](https://github.com/abhinavmaurya12/JavaSquadz)
 
 ---
 
