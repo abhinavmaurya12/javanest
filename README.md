@@ -1,6 +1,3 @@
-Yes. I checked the **actual current repository structure** first: `css/`, `data/`, `js/`, `pages/`, `index.html`, `javapro-data.js`, and `practice-data.js`. The repo is currently public with 8 commits, and GitHub shows no description/topics yet. ([GitHub][1])
-
-For a stronger **portfolio + GitHub presentation**, I’d use this more advanced README:
 
 # ☕ JavaNest
 
