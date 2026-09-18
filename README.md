@@ -541,11 +541,11 @@ A collection of browser-based games and interactive mini-projects.
 
 🔗 [https://abhinavmaurya12.github.io/funbyte/](https://abhinavmaurya12.github.io/funbyte/)
 
-### ☕ CodeSquadz
+### ☕ JavaSquadz
 
 A Java programming practice repository containing programs and examples covering Core Java, OOP, Arrays, Collections, Exception Handling, File I/O, Multithreading, AWT/Swing and more.
 
-🔗 [https://github.com/abhinavmaurya12/CodeSquadz](https://github.com/abhinavmaurya12/CodeSquadz)
+🔗 [https://github.com/abhinavmaurya12/JavaSquadz](https://github.com/abhinavmaurya12/JavaSquadz)
 
 ---
 
